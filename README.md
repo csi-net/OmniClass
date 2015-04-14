@@ -9,6 +9,32 @@ This Readme will be updated according to the current status of the OmniClass API
 - New features and improvements to existing features are still being considered.  Please submit any suggestions to our [issues section](https://github.com/csi-net/OmniClassBeta/issues), using the "enhancement" label.
 - Existing features are subject to change or removal.  Such modifications will be noted on this document in addition to email notifications.
 
+**All beta testers will receive a Vendor Key** (a GUID string) that is required when sending API requests.  This allows us to authenticate users and track utilization.  *(Please Note that Vendor keys are used exclusively in the OmniClass context and cannot be used to access any personal or organizational information in any system outside of CSI offices.)*
+
+The following list describes what is available **now** through the API:
+- **Access to the most recent OmniClass table versions**  
+*(backdated versions will be added in the near future)*
+- **Table and Classification properties**  
+*(Numbers and Titles, but also descriptions, IDs for relevant objects within other classification systems, and more)*
+- **Hierarchy of Classification objects**  
+*(Each Object, whether it be a table or a classification, clearly lists it’s immediate children and parent objects)*
+- **Table Version and Revision Information**  
+*(Release Status, publish date, and version numbers)*
+
+We are working to implement the following in the **near future**:
+- **Backdated Table Versions**  
+*(The ability to request objects by version is implemented already, but the older versions are still being converted to the new database)*
+- **A new website that exposes the same information available through the API with a clear, navigable interface**
+- **Implementing more API request types for gathering and searching information**
+
+The following are features that will be made available **later on but before leaving the Beta testing phase**:
+- **SSL and an improved authentication process**  
+*(Vendor keys are currently included in http requests to the API server, which can be intercepted)*
+- **Ability to create, manage, and share custom OmniClass Table Versions**  
+- **Language translations of Tables and Classifications along with API methods for requesting multilingual data**
+
+
+
 ### OC_Data.dll
 OC_Data is a .NET package that provides an easy way to access the OmniClass API.
 
@@ -63,15 +89,6 @@ http://ocservice.csinet.org/OmniClass_Service.svc/GetOCObject
 Arguments: *key*, *guid*, *version (optional)*  
 Given a GUID for an object, returns that object's properties and a list of GUIDs representing its child objects.  Setting version to a valid Version GUID will get the object's status as of that version, rather than the newest version which is the default.
 
-### Planned Features
-These features are subject to change and will see varying implementation over time during the Beta.  Once all of the following have been implemented, The service will leave Beta status.
-
-- Improved Accompanying OmniClass Website
-- SSL for the API and improved authentication process
-- "Helper" methods for searching OmniClass Objects (for example, retrieving Guids by Number/Title)
-- Backdated versions of OmniClass tables (The current release includes only the most recent versions)
-- Ability to create and manage custom OmniClass Table Versions through API and browser-based tool
-- Language translations and methods for requesting multilingual data
-
 ### Feedback and Support
-Please post all service feedback or requests for technical support to the [issues section](https://github.com/csi-net/OmniClassBeta/issues) and apply an appropriate label (*bug* for service breaking issues, *enhancement* for feature requests or improvement suggestions, or *help wanted* for questions and support).
+Please post all service feedback or requests for technical support to the [issues section](https://github.com/csi-net/OmniClassBeta/issues) and apply an appropriate label (*bug* for service breaking issues, *enhancement* for feature requests or improvement suggestions, or *help wanted* for questions and support).  
+A GitHub user account is required to submit or comment on issues. This only requires an email address and allows for public discussion of issues by CSI staff and fellow beta testers. As issues are created, we encourage testers to read and comment on issues if they feel they can contribute.

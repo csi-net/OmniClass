@@ -4,36 +4,32 @@ This GitHub project consolidates documentation and feedback for CSI's OmniClass 
 This Readme will be updated according to the current status of the OmniClass API service.
 
 ### The OmniClass API service is currently in the beta testing phase.
-- Only those organizations or individuals who have been accepted as beta testers will be able to use the service at this time.  [Contact CSI](mailto:csi@csinet.org) regarding becoming a beta tester.
+- Only those organizations or individuals who have been accepted as beta testers will be able to use the service at this time.  [Contact CSI](mailto:omniclassbeta@csinet.org) regarding becoming a beta tester.
 - Errors, slow response times, and unfinished features are to be expected;  Please help us to improve the service by reporting problems in our [issues section](https://github.com/csi-net/OmniClassBeta/issues), using the "bug" label.
 - New features and improvements to existing features are still being considered.  Please submit any suggestions to our [issues section](https://github.com/csi-net/OmniClassBeta/issues), using the "enhancement" label.
 - Existing features are subject to change or removal.  Such modifications will be noted on this document in addition to email notifications.
 
-**All beta testers will receive a Vendor Key** (a GUID string) that is required when sending API requests.  This allows us to authenticate users and track utilization.  *(Please Note that Vendor keys are used exclusively in the OmniClass context and cannot be used to access any personal or organizational information in any system outside of CSI offices.)*
+**All beta testers will receive a Vendor Key** (a GUID string) that is required when sending API requests.  This allows us to authenticate users and track utilization.  *(Please note: Vendor keys are used only to access the OmniClass services and cannot be used by anyone to access any other personal or organizational information in any other CSI system.)*
 
 The following list describes what is available **now** through the API:
 - Access to the most recent OmniClass table versions  
-*(backdated versions will be added in the near future)*
+*(Access to previous versions will be added in the near future.)*
 - Table and Classification properties  
-*(Numbers and Titles, but also descriptions, IDs for relevant objects within other classification systems, and more)*
+*(Properties include numbers, titles, descriptions, GUIDs, links to relevant objects within other classification systems.  Properties and links will be added as development and testing proceed.)*
 - Hierarchy of Classification objects  
-*(Each Object, whether it be a table or a classification, clearly lists it’s immediate children and parent objects)*
+*(Each classification object at every level can provide its immediate children, sibling, and parent objects.)*
 - Table Version and Revision Information  
-*(Release Status, publish date, and version numbers)*
+*(Release status, publication date, and version numbers are all available for each Table.)*
 
 We are working to implement the following in the **near future**:
-- Backdated Table Versions  
-*(The ability to request objects by version is implemented already, but the older versions are still being converted to the new database)*
-- A new website that exposes the same information available through the API with a clear, navigable interface
-- Implementing more API request types for gathering and searching information
+- Previous Table Versions  
+*(This will provide the capacity to move classifications in use to older or newer classifications. The ability to request objects by version is implemented currently, but the older versions are still being converted in the new database.)*
+- A new website that exposes much of the information available through the API with a clear, navigable interface.
+- Additional API request types for gathering, searching, and using information.
 
 The following are features that will be made available **later on but before leaving the Beta testing phase**:
 - SSL and an improved authentication process  
-*(Vendor keys are currently included in http requests to the API server, which can be intercepted)*
-- Ability to create, manage, and share custom OmniClass Table Versions  
-- Language translations of Tables and Classifications along with API methods for requesting multilingual data
-
-
+- Ability to create, manage, and share custom OmniClass entries  
 
 ### OC_Data.dll
 OC_Data is a .NET package that provides an easy way to access the OmniClass API.
@@ -92,4 +88,6 @@ Given a GUID for an object, returns that object's properties and a list of GUIDs
 ### Feedback and Support
 Please post all service feedback or requests for technical support to the [issues section](https://github.com/csi-net/OmniClassBeta/issues) and apply an appropriate label (*bug* for service breaking issues, *enhancement* for feature requests or suggestions, or *help wanted* for questions and support).
 
-**A GitHub user account is required to submit or comment on issues**. This only requires an email address and allows for public discussion of issues by CSI staff and fellow beta testers. As issues are created, we encourage testers to read and comment on issues if they feel they can contribute.
+**A free GitHub user account is required to submit or comment on issues**. Logging in and using this resource will allow for public discussion of issues by all beta testers.  As issues are created, we encourage testers to read and comment on issues if they feel they can contribute.
+
+For direct contact on development issues, please email [omniclassbeta@csinet.org](mailto:omniclassbeta@csinet.org)

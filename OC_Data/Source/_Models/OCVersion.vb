@@ -6,7 +6,7 @@ Public Class OCVersion
     Public ReadOnly GUID As Guid
 
     <DataMember>
-    Public ReadOnly Account As Guid?
+    Public ReadOnly Vendor As Guid?
 
     <DataMember>
     Public ReadOnly ForkedFromVersion As Guid?
@@ -32,11 +32,11 @@ Public Class OCVersion
     <DataMember>
     Public ReadOnly Published As Boolean
 
-    Public Sub New(GUID As Guid, Account As Guid?, ForkedFromVersion As Guid?, TableGUID As Guid, ReleaseStatus As OCReleaseStatus, _
+    Public Sub New(GUID As Guid, Vendor As Guid?, ForkedFromVersion As Guid?, TableGUID As Guid, ReleaseStatus As OCReleaseStatus, _
                    VersionNumber As Integer, RevisionNumber As Integer, VersionString As String, PublishDate As Date?, _
                    Published As Boolean)
         Me.GUID = GUID
-        Me.Account = Account
+        Me.Vendor = Vendor
         Me.ForkedFromVersion = ForkedFromVersion
         Me.TableGUID = TableGUID
         Me.ReleaseStatus = ReleaseStatus
@@ -56,8 +56,8 @@ Public Class OCVersion
         sb.Append(System.Environment.NewLine)
         sb.Append("GUID: " & GUID.ToString())
         sb.Append(System.Environment.NewLine)
-        If Not Account Is Nothing Then
-            sb.Append("Account: " & Account.ToString())
+        If Not Vendor Is Nothing Then
+            sb.Append("Vendor: " & Vendor.ToString())
             sb.Append(System.Environment.NewLine)
         End If
         If Not ForkedFromVersion Is Nothing Then

@@ -11,31 +11,33 @@ Public Class OCText
     <DataMember>
     Public ReadOnly Text As String
 
-    <DataMember>
-    Public ReadOnly TranslationSource As String
-
-    <DataMember>
-    Public ReadOnly TranslationNotes As List(Of OCText)
-
-    <DataMember>
-    Public ReadOnly Variants As List(Of OCText)
+    'Translations not yet supported
+    '<DataMember>
+    'Public ReadOnly TranslationSource As String
+    '
+    '<DataMember>
+    'Public ReadOnly TranslationNotes As List(Of OCText)
+    '
+    '<DataMember>
+    'Public ReadOnly Variants As List(Of OCText)
 
     Public Sub New(LanguageTag As String, Text As String, Optional TranslationSource As String = Nothing, Optional TranslationNotes As List(Of OCText) = Nothing, Optional Variants As List(Of OCText) = Nothing)
         Me.LanguageTag = LanguageTag
         Me.Text = Text
-        Me.TranslationSource = TranslationSource
 
-        If TranslationNotes Is Nothing Then
-            Me.TranslationNotes = New List(Of OCText)
-        Else
-            Me.TranslationNotes = TranslationNotes
-        End If
-
-        If Variants Is Nothing Then
-            Me.Variants = New List(Of OCText)
-        Else
-            Me.Variants = Variants
-        End If
+        'Translations not yet supported
+        '
+        'Me.TranslationSource = TranslationSource
+        'If TranslationNotes Is Nothing Then
+        '    Me.TranslationNotes = New List(Of OCText)
+        'Else
+        '    Me.TranslationNotes = TranslationNotes
+        'End If
+        'If Variants Is Nothing Then
+        '    Me.Variants = New List(Of OCText)
+        'Else
+        '    Me.Variants = Variants
+        'End If
     End Sub
 
     Public Overrides Function ToString() As String
@@ -50,26 +52,26 @@ Public Class OCText
         sb.Append("Text: " & Text)
         sb.Append(System.Environment.NewLine)
 
-        If Not TranslationSource Is Nothing Then
-            sb.Append("Translation Source: " & TranslationSource)
-            sb.Append(System.Environment.NewLine)
-        End If
-
-        If Not TranslationNotes Is Nothing AndAlso TranslationNotes.Count > 0 Then
-            sb.Append("Translation Notes:")
-            sb.Append(System.Environment.NewLine)
-            For Each n In TranslationNotes
-                sb.Append(n.ToString())
-            Next
-        End If
-
-        If Not Variants Is Nothing AndAlso Variants.Count > 0 Then
-            sb.Append("Variants:")
-            sb.Append(System.Environment.NewLine)
-            For Each v In Variants
-                sb.Append(v.ToString())
-            Next
-        End If
+        'Translations not yet supported
+        '
+        'If Not TranslationSource Is Nothing Then
+        '    sb.Append("Translation Source: " & TranslationSource)
+        '    sb.Append(System.Environment.NewLine)
+        'End If
+        'If Not TranslationNotes Is Nothing AndAlso TranslationNotes.Count > 0 Then
+        '    sb.Append("Translation Notes:")
+        '    sb.Append(System.Environment.NewLine)
+        '    For Each n In TranslationNotes
+        '        sb.Append(n.ToString())
+        '    Next
+        'End If
+        'If Not Variants Is Nothing AndAlso Variants.Count > 0 Then
+        '    sb.Append("Variants:")
+        '    sb.Append(System.Environment.NewLine)
+        '    For Each v In Variants
+        '        sb.Append(v.ToString())
+        '    Next
+        'End If
 
         sb.Append("]")
         sb.Append(System.Environment.NewLine)
